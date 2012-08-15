@@ -2,4 +2,4 @@
 
 javascript and bootstrap learning project
 
-http://football-league-maker.herokuapp.com/
+http://football-league-generator.herokuapp.com/
