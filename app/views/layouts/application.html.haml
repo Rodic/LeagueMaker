@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title Football League Generator
+    %meta{:content => "", :name => "Javascript and Bootstrap Learning Project"}
+    %meta{:content => "", :name => "alec.rodic@gmail.com"}
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %header.navbar.navbar-fixed-top
+      %h1 Football League Generator
+    #main{:role => "main"}
+      .container
+        .content
+          .row
+            .span6.offset3
+              = yield
+          %footer
+            %p alec.rodic@gmail.com

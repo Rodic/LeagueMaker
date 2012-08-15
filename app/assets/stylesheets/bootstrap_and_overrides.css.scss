@@ -1,0 +1,122 @@
+@import "bourbon";
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "colors";
+
+@mixin rounded($rad: 20px) {
+	@include border-radius($rad $rad $rad $rad);
+}
+
+body {
+	background: $white;
+}
+
+header {
+	background: $darkGreen;
+	border-bottom: 8px solid $red;
+	h1 {
+		color: $white;
+		font-size: $gridColumnWidth;
+		font-weight: bold;
+		font-style: italic;
+		padding: $gridGutterWidth;
+	}
+}
+
+#content {
+	padding: $gridGutterWidth;
+	padding-bottom: $gridGutterWidth * 2;
+	margin-top: $gridColumnWidth * 3;
+	@include box-shadow(0px 0px 20px $black);
+	
+	p {
+		font-size: $gridGutterWidth;
+		font-weight: bold;
+		padding: $gridGutterWidth / 2;
+		background-color: $darkGreen;
+		text-align: center;
+		color: white;
+	}
+
+	label {
+		font-size: 150%;
+		display: inline-block;
+		width: $gridColumnWidth * 5;
+	}
+}
+
+.round {
+	@include rounded;
+}
+
+.innerBox {
+	padding: $gridGutterWidth $gridColumnWidth;
+}
+
+button {
+	float: right;
+	margin-left: $gridGutterWidth;
+}
+
+select {
+	background: transparent;
+	border: 1px solid $gray;
+	width: $gridGutterWidth * 2;
+}
+
+#scheduleDisplay input[type="text"] {
+	width: $gridGutterWidth;
+}
+
+ul {
+	font-size: 150%;
+	list-style-type: none;
+}
+
+#playersInClubs ol>li {
+	font-family: $monospace; 
+	background-color: $gray;
+	@include rounded(10px);
+	border: 1px solid $gray;
+	margin-bottom: $gridGutterWidth;
+	ul li {
+		padding: $gridGutterWidth /2  $gridGutterWidth;
+	}
+}
+
+#playersInClubs ol>li:hover {
+	background-color: $lightGreen;
+}
+
+.table tbody tr:hover td, .table tbody tr:hover th { 
+	background-color: $lightGreen;
+}
+
+#leagueDisplay, #scheduleDisplay {
+	margin-top: $gridGutterWidth;
+	margin-bottom: $gridGutterWidth;
+	font-size: 150%;
+	td, th {
+		padding: $gridGutterWidth;
+	}
+	th {
+		background-color: $darkGreen;
+		color: white;
+	}
+}
+
+footer {
+	position:fixed; 
+	bottom:0;
+	left:0;
+	background-color: $darkGreen;
+	height: $gridGutterWidth;
+	width: 100%;
+	color: $darkGray;
+	padding: 5px;
+	text-align: center;
+}
+
+footer p:hover {
+	color: $white;
+}

@@ -1,0 +1,55 @@
+#content.round
+
+	#basicSettings.box
+		%p Basic settings
+		.innerBox
+			%label{for: 'clubsNum'} Select number of clubs:
+			%select#clubsNum{name: 'clubsNum'}
+				-@clubs_num.each do |n|
+					%option{:value => n}= n
+			%br
+			%label{for: 'playersNum'} Select number of players:
+			%select#playersNum{name: 'playersNum'}
+				%option{value: '-'} -
+				-@players_num.each do |n|
+					%option{value: n}= n
+		%button#toClubsSettings.btn.btn-inverse{type: 'button'} Club Settings
+		%button#toPlayersSettings.btn.btn-inverse{type: 'button', disabled: 'disabled'}Player Settings
+	
+	#playersSettings.box.hidden
+		%p Enter names
+		.innerBox
+			%ol#playersList
+			%button#makeTeams.btn.btn-inverse{type: 'button'} Make Teams
+
+	#clubsSettings.box.hidden
+		#playersInClubs.hidden
+			%p Teams are:
+			.innerBox
+				%ol#teamsList
+		#clubsInput
+			%p Names for clubs
+			.innerBox
+				%ol#clubsList
+		%button#toLeague.btn.btn-inverse{type: 'button'} To League
+
+	#league.box.hidden
+		#leagueDisplay
+			%table.table.table-striped.table-condensed
+				%tr
+					%th Club
+					%th W
+					%th D
+					%th L
+					%th GS
+					%th GD
+					%th Pts
+				%tbody#leagueTable
+		#scheduleDisplay
+			%table.table.table-striped.table-condensed
+				%tr
+					%th #
+					%th Game
+					%th Result
+				%tbody#scheduleTable
+		%button#tableUpdate.btn.btn-inverse{type: 'button'} Update standings
