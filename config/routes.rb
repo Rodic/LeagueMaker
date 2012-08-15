@@ -1,6 +1,8 @@
 LeagueMaker::Application.routes.draw do
-  root :to => "leagues#new"
+  
   get "leagues/new"
+
+  root :to => 'leagues#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
